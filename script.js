@@ -14,6 +14,22 @@ for (let i = 0; i < cnt; i++) {
         removeColor(square);
     })
 
+    // добавим события для мобилки
+    square.addEventListener('touchstart', () => {
+        setColor(square);
+    })
+    square.addEventListener('touchmove', (x) => {
+        x.preventDefault(); // при передвижании пальца
+        const touch = x.touches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (element && element.classList.contains('square')) {
+            setColor(square);
+        }
+    })
+    square.addEventListener('touchend', () => {
+        removeColor(square);
+    })
+
     board.append(square); // добавляем элемент в html
 }
 
