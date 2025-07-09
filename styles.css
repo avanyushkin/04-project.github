@@ -38,3 +38,11 @@ body {
 .square:hover {
     transition-duration: 0s;
 }
+
+.container { /*чтобы избежать выделения текста*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
