@@ -38,8 +38,17 @@ board.addEventListener('touchend', (event) => { // для сбрасывания
     });
 });
 
+const colorList = ["Crimson", "Chocolate", "DarkBlue", "Chartreuse", "DarkMagenta", "DarkSlateBlue", "DarkTurquoise",
+    "DarkSalmon", "DeepPink", "DimGray"]
+
+function getRandomInt(left, right) {
+    left = Math.ceil(left);
+    right = Math.ceil(right);
+    return Math.floor(Math.random() * (right - left + 1)) + left;
+}
+
 function setColor(x) {
-    x.target.style.backgroundColor = "red";
+    x.target.style.backgroundColor = colorList[getRandomInt(0, colorList.length - 1)];
 }
 
 function removeColor(x) {
